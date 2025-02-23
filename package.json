@@ -1,0 +1,30 @@
+{
+  "name": "my-react",
+  "version": "1.0.0",
+  "description": "My react project",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/surichakkirala/my-react.git"
+  },
+  "keywords": [],
+  "author": "Surendra Kumar Chakkirala",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/surichakkirala/my-react/issues"
+  },
+  "homepage": "https://github.com/surichakkirala/my-react#readme",
+  "devDependencies": {
+    "parcel": "^2.13.3",
+    "process": "^0.11.10"
+  },
+  "dependencies": {
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0"
+  },
+  "browserslist": [
+    "last 2 versions"
+  ]
+}
