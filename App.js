@@ -1,16 +1,13 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 
-const parent = React.createElement("div", { id: "parent" }, [
-  React.createElement("div", { id: "child1" }, [
-    React.createElement("h1", {}, "I'm h1 of child1"),
-    React.createElement("p", {}, "I'm p tag of child1"),
-  ]),
-  React.createElement("div", { id: "child2" }, [
-    React.createElement("h1", {}, "I'm h1 of child2"),
-    React.createElement("p", {}, "I'm p tag of child2"),
-  ]),
-]);
-
+// React.createElement => Object => HTML Element(render)
+//JSX- It is not HTML inside JS. It is HTML like syntax.
+// JSX=> Babel transpiles it to React.createElement => Object => HTML Element(render)
+const jsxHeading = (
+  <h1 className="head" tabIndex="5">
+    Namaste React
+  </h1>
+);
 const root = ReactDOM.createRoot(document.getElementById("root"));
-root.render(parent);
+root.render(jsxHeading);
