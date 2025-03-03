@@ -1,3 +1,48 @@
-#heading {
-  color: brown;
+.header {
+  display: flex;
+  justify-content: space-between;
+  border: 1px solid brown;
+}
+
+.logo {
+  width: 200px;
+}
+
+.nav-items {
+  padding: 0px 20px;
+}
+
+.nav-items > ul {
+  font-size: 24px;
+  display: flex;
+  list-style: none;
+}
+
+.nav-items > ul > li {
+  padding: 10px;
+  margin: 10px;
+}
+
+.restnt-container {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.restnt-card {
+  margin: 1px;
+  padding: 10px;
+  width: 200px;
+}
+
+.restnt-card:hover {
+  border: 1px solid black;
+  cursor: pointer;
+}
+
+.res-logo {
+  width: 100%;
+}
+
+.search {
+  padding: 10px;
 }
