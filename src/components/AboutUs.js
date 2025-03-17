@@ -12,13 +12,19 @@ class AboutUs extends React.Component {
     console.log("Parent DidMount");
   }
 
+  componentDidUpdate() {
+    console.log("Parent comp did update");
+  }
+  componentWillUnmount() {
+    console.log("Parent comp willunmount");
+  }
+
   render() {
     console.log("Parent Render");
     return (
       <div>
         <h1>AboutUs</h1>
         <span>This is AboutUs page</span>
-        <UserClass name={"First "} />
         <UserClass name={"Second "} />
       </div>
     );
