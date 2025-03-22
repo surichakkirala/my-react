@@ -47,3 +47,11 @@
 - Parent componentDidMount
 
 - \*/
+
+# Different names for Lazy loading
+
+- - Chunking
+- - Code Splitting
+- - Dynamic Bundling
+- - OnDemand Loading
+- - Dynamic Import
