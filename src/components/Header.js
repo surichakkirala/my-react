@@ -9,7 +9,9 @@ const Header = () => {
   return (
     <div className="w-screen h-20 flex justify-between items-center shadow-2xl">
       <div>
-        <img className="w-20 h-20" src={LOGO_URL} />
+        <Link to={"/"}>
+          <img className="w-20 h-20" src={LOGO_URL} />
+        </Link>
       </div>
       <div>
         <ul className="flex items-center p-4 m-4">

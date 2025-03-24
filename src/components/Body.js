@@ -8,7 +8,6 @@ const Body = () => {
   const [searchText, setSearchText] = useState("");
   const [listOfRestaurants, filteredRestaurant, setFilteredRestaurant] =
     useRestaurantList();
-  console.log("list:", listOfRestaurants);
   const onlineStatus = useOnlineStatus();
   if (onlineStatus === false) {
     return (
@@ -61,7 +60,7 @@ const Body = () => {
               key={restaurant.info.id}
               to={"/restaurant/" + restaurant.info.id}
             >
-              <RestaurantCard resData={restaurant} />{" "}
+              <RestaurantCard resData={restaurant} />
             </Link>
           ))
         ) : (

@@ -3,11 +3,7 @@ import { CDN_URL } from "../utils/constants";
 import { MdStarRate } from "react-icons/md";
 const RestaurantCard = (props) => {
   const { resData } = props;
-  {
-    /* </div> */
-  }
   const {
-    id,
     name,
     cuisines,
     cloudinaryImageId,
@@ -34,11 +30,7 @@ const RestaurantCard = (props) => {
           <h4 className="flex items-center">
             <MdStarRate
               className="text-white w-[18px] h-[18px] rounded-[50%] p-[2px] mr-[3px]"
-              style={
-                avgRating > 4.5
-                  ? { backgroundColor: "green" }
-                  : { backgroundColor: "red" }
-              }
+              style={{ backgroundColor: "green" }}
             />
             <span>{avgRating}</span>
           </h4>
