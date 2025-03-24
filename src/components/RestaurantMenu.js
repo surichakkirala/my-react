@@ -13,8 +13,6 @@ const RestaurantMenu = () => {
   }
   const { name, cuisines, costForTwoMessage, sla } =
     resInfo?.cards[2]?.card?.card?.info;
-  // const { itemCards } =
-  //   resInfo?.cards[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards[1]?.card?.card;
   const itemCategories =
     resInfo?.cards[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards;
   console.log(itemCategories);
