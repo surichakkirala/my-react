@@ -7,7 +7,6 @@ const RestaurantMenu = () => {
   const { resId } = useParams();
 
   const resInfo = useRestaurantMenu(resId);
-  console.log("info", resInfo);
   if (resInfo === null) {
     return <Shimmer />;
   }
@@ -15,7 +14,6 @@ const RestaurantMenu = () => {
     resInfo?.cards[2]?.card?.card?.info;
   const itemCategories =
     resInfo?.cards[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards;
-  console.log(itemCategories);
   const categories = itemCategories.filter(
     (itemCategory) =>
       itemCategory.card?.["card"]?.["@type"] ===
