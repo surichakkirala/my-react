@@ -8,6 +8,7 @@ const Body = () => {
   const [searchText, setSearchText] = useState("");
   const [listOfRestaurants, filteredRestaurant, setFilteredRestaurant] =
     useRestaurantList();
+  console.log("list:", listOfRestaurants);
   const onlineStatus = useOnlineStatus();
   if (onlineStatus === false) {
     return (
@@ -21,7 +22,6 @@ const Body = () => {
   ) : (
     <div className="body">
       <div className="flex items-center justify-center">
-        {/* <div className="m-4 p-4"> */}
         <input
           type="text"
           className="w-auto h-10 border border-solid rounded-lg px-1"
@@ -53,7 +53,6 @@ const Body = () => {
         >
           Top Rated Restaurants
         </button>
-        {/* </div> */}
       </div>
       <div className="flex flex-wrap grid-flow-row justify-center items-center gap-x-[1.5%] gap-y-[25px]">
         {filteredRestaurant.length !== 0 ? (
@@ -68,18 +67,6 @@ const Body = () => {
         ) : (
           <h2>Sorry, we couldn't find any restaurant for "{restaurantName}"</h2>
         )}
-
-        {/* {filteredRestaurant.map((restaurant) => {
-          return (
-            <Link
-              className="w-[250px] h-[300px] bg-white rounded-lg cursor-pointer overflow-hidden hover:scale-[0.98]"
-              key={restaurant.info.id}
-              to={"/restaurant/" + restaurant.info.id}
-            >
-              <RestaurantCard resData={restaurant} />{" "}
-            </Link>
-          );
-        })} */}
       </div>
     </div>
   );
