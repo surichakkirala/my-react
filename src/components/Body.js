@@ -20,29 +20,30 @@ const Body = () => {
     <Shimmer />
   ) : (
     <div className="body">
-      <div className="filter">
-        <div className="search">
-          <input
-            type="text"
-            className="search-box"
-            value={searchText}
-            onChange={(e) => {
-              setSearchText(e.target.value);
-            }}
-          />
-          <button
-            onClick={() => {
-              const filteredSearch = listOfRestaurants.filter((res) =>
-                res.info.name.toLowerCase().includes(searchText.toLowerCase())
-              );
-              setFilteredRestaurant(filteredSearch);
-            }}
-          >
-            Search
-          </button>
-        </div>
+      <div className="flex items-center justify-center">
+        {/* <div className="m-4 p-4"> */}
+        <input
+          type="text"
+          className="w-auto h-10 border border-solid rounded-lg px-1"
+          placeholder="Search..."
+          value={searchText}
+          onChange={(e) => {
+            setSearchText(e.target.value);
+          }}
+        />
         <button
-          className="filter-btn"
+          className="px-4 py-4 m-4 rounded-lg cursor-pointer hover:text-orange-600"
+          onClick={() => {
+            const filteredSearch = listOfRestaurants.filter((res) =>
+              res.info.name.toLowerCase().includes(searchText.toLowerCase())
+            );
+            setFilteredRestaurant(filteredSearch);
+          }}
+        >
+          Search
+        </button>
+        <button
+          className="px-4 py-4 rounded-lg cursor-pointer hover:text-orange-600"
           onClick={() => {
             const filteredList = listOfRestaurants.filter(
               (restaurant) => restaurant.info.avgRating > 4.5
@@ -52,19 +53,33 @@ const Body = () => {
         >
           Top Rated Restaurants
         </button>
+        {/* </div> */}
       </div>
-
-      <div className="restnt-container">
-        {filteredRestaurant.map((restaurant) => {
-          return (
+      <div className="flex flex-wrap grid-flow-row justify-center items-center gap-x-[1.5%] gap-y-[25px]">
+        {filteredRestaurant.length !== 0 ? (
+          filteredRestaurant.map((restaurant) => (
             <Link
               key={restaurant.info.id}
               to={"/restaurant/" + restaurant.info.id}
             >
               <RestaurantCard resData={restaurant} />{" "}
             </Link>
+          ))
+        ) : (
+          <h2>Sorry, we couldn't find any restaurant for "{restaurantName}"</h2>
+        )}
+
+        {/* {filteredRestaurant.map((restaurant) => {
+          return (
+            <Link
+              className="w-[250px] h-[300px] bg-white rounded-lg cursor-pointer overflow-hidden hover:scale-[0.98]"
+              key={restaurant.info.id}
+              to={"/restaurant/" + restaurant.info.id}
+            >
+              <RestaurantCard resData={restaurant} />{" "}
+            </Link>
           );
-        })}
+        })} */}
       </div>
     </div>
   );
