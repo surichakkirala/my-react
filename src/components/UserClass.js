@@ -7,7 +7,6 @@ class UserClass extends React.Component {
         name: "",
       },
     };
-    // console.log(this.props.name + "Child constructor");
   }
 
   async componentDidMount() {
@@ -25,10 +24,10 @@ class UserClass extends React.Component {
     console.log("component willUnmount");
   }
   render() {
-    const { name, url } = this.state.userInfo;
+    const { name, avatar_url } = this.state.userInfo;
     return (
       <div className="user-card">
-        <img src={url} />
+        <img src={avatar_url} />
         <h2>Name:{name}</h2>
       </div>
     );
