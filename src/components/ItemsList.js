@@ -21,8 +21,8 @@ const ItemsList = ({ items }) => {
                   ? item.card.info.price / 100
                   : item.card.info.defaultPrice / 100}
               </span>
+              <CardText data={item.card.info.description} />
             </div>
-            <CardText data={item.card.info.description} />
           </div>
           <div className="w-3/12 p-4">
             <div className="absolute">
