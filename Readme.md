@@ -28,14 +28,14 @@
 
 # Life cycle of class based components
 
-- - Parent Constructor
-- - Parent render
+- Parent Constructor
+- Parent render
 
-  - - First child constructor
-  - - First child render
+- - First child constructor
+- - First child render
 
-  - - Second child constructor
-  - - Second child render
+- - Second child constructor
+- - Second child render
 
 < DOM is updated in a single batch>
 
