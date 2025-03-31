@@ -8,13 +8,16 @@
   - NavItems
 
 - Body
+
   - Search
   - RestaurantContainer
   - RestaurantCard
+
 - Footer
-- Copyright
-- Links
-- Address & Contact
+
+  - Copyright
+  - Links
+  - Address & Contact
 
 # whenever a state variable updates react triggers a reconciliation cycle(re-renders the component)
 
