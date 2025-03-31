@@ -1,6 +1,6 @@
 import RestaurantCard from "./RestaurantCard";
 import { useState } from "react";
-import Shimmer from "./Shimmer";
+import { Shimmer } from "./Shimmer";
 import { Link } from "react-router-dom";
 import useRestaurantList from "../utils/useRestaurantList";
 import useOnlineStatus from "../utils/useOnlineStatus";

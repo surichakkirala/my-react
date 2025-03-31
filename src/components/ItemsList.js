@@ -8,7 +8,7 @@ const ItemsList = ({ items }) => {
       {items.map((item) => (
         <div
           key={item.card.info.id}
-          className="p-2 m-2 border-gray-300 border-b-1 text-left flex justify-between"
+          className="p-4 border-gray-300 border-b-1 text-left flex justify-between"
         >
           <div className="w-9/12">
             <div className="py-2">
@@ -26,13 +26,13 @@ const ItemsList = ({ items }) => {
           </div>
           <div className="w-3/12 p-4">
             <div className="absolute">
-              <button className=" p-2 mx-10 rounded-lg font-bold bg-white text-green-600 shadow-lg">
+              <button className=" p-2 px-5 mx-5 my-20  rounded-lg font-bold bg-white text-green-600 shadow-lg">
                 ADD
               </button>
             </div>
             <img
               src={CDN_URL + item.card.info.imageId}
-              className="w-full rounded-lg"
+              className="w-[120px] h-[100px] rounded-lg"
             />
           </div>
         </div>

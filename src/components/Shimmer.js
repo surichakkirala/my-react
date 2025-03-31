@@ -1,4 +1,4 @@
-const Shimmer = () => {
+export const Shimmer = () => {
   return (
     <div className="flex flex-col justify-center items-center transition-all">
       <div className="w-[40%] h-10 bg-[#f0f0f0] rounded-lg  mt-5 mb-5 ">
@@ -20,4 +20,26 @@ const Shimmer = () => {
   );
 };
 
-export default Shimmer;
+export const MenuShimmer = () => {
+  return (
+    <div className="w-6/12 mx-auto my-2 flex flex-wrap">
+      <div className="w-[100%] p-4 m-4 bg-[#f0f0f0] rounded-lg"></div>
+      <div className="w-[100%] p-4 m-4 bg-[#f0f0f0] rounded-lg"></div>
+      <div className="w-[100%] p-4 m-4 bg-[#f0f0f0] rounded-lg"></div>
+      <div className="w-[100%] p-4 m-4 bg-[#f0f0f0] rounded-lg"></div>
+      <div className="w-[100%] p-4 m-4 bg-[#f0f0f0] rounded-lg"></div>
+      <div className="w-[100%] p-4 m-4 bg-[#f0f0f0] rounded-lg"></div>
+      <div className="w-[100%] p-4 m-4 bg-[#f0f0f0] rounded-lg"></div>
+      <div className="w-[100%] p-4 m-4 bg-[#f0f0f0] rounded-lg"></div>
+      <div className="w-[100%] p-4 m-4 bg-[#f0f0f0] rounded-lg"></div>
+      <div className="w-[100%] p-4 m-4 bg-[#f0f0f0] rounded-lg"></div>
+      <div className="w-[100%] p-4 m-4 bg-[#f0f0f0] rounded-lg"></div>
+      <div className="w-[100%] p-4 m-4 bg-[#f0f0f0] rounded-lg"></div>
+      <div className="w-[100%] p-4 m-4 bg-[#f0f0f0] rounded-lg"></div>
+      <div className="w-[100%] p-4 m-4 bg-[#f0f0f0] rounded-lg"></div>
+      <div className="w-[100%] p-4 m-4 bg-[#f0f0f0] rounded-lg"></div>
+      <div className="w-[100%] p-4 m-4 bg-[#f0f0f0] rounded-lg"></div>
+      <div className="w-[100%] p-4 m-4 bg-[#f0f0f0] rounded-lg"></div>
+    </div>
+  );
+};
