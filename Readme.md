@@ -28,10 +28,8 @@
 
 # Life cycle of class based components
 
-/\*
-
-- Parent Constructor
-- Parent render
+- - Parent Constructor
+- - Parent render
 
   - - First child constructor
   - - First child render
@@ -44,9 +42,7 @@
 - - First child componentDidMount
 - - Second child componentDidMount
 
-- Parent componentDidMount
-
-- \*/
+- - Parent componentDidMount
 
 # Different names for Lazy loading
 
