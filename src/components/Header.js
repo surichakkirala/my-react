@@ -3,9 +3,14 @@ import { LOGO_URL } from "../utils/constants";
 import { Link } from "react-router-dom";
 import useOnlineStatus from "../utils/useOnlineStatus";
 import { TiShoppingCart } from "react-icons/ti";
+import { useSelector } from "react-redux";
 const Header = () => {
   const [btnNameReact, setBtnNameReact] = useState("Login");
   const isOnline = useOnlineStatus();
+
+  //subscribing to the store using a Selector
+  const cartItems = useSelector((store) => store.cart.items);
+  console.log(cartItems.length);
   return (
     <div className="w-screen h-20 flex justify-between items-center shadow-2xl">
       <div>
@@ -33,8 +38,16 @@ const Header = () => {
           </li>
 
           <li className="px-4">
-            <Link className="hover:text-orange-600">
-              <TiShoppingCart />
+            <Link
+              className="hover:text-orange-600 flex justify-center items-center"
+              to={"/cart"}
+            >
+              <TiShoppingCart className="w-6 h-6" />
+              {cartItems.length !== 0 && (
+                <span className="mb-4 text-white bg-orange-600 w-6 h-6 text-center rounded-full">
+                  {cartItems.length}
+                </span>
+              )}
             </Link>
           </li>
           <div>

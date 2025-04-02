@@ -49,3 +49,12 @@
 - Dynamic Bundling
 - OnDemand Loading
 - Dynamic Import
+
+# Redux Toolkit
+
+- Install @reduxjs/toolkit and react-redux
+- Build our store
+- Connect our store to our app
+- Create our cartSlice
+- Dispatch(action)
+- Read the data using selector

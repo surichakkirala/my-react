@@ -1,8 +1,16 @@
 import { useState } from "react";
 import { CDN_URL } from "../utils/constants";
 import CardText from "./CardText";
+import { useDispatch, useSelector } from "react-redux";
+import { addItemsToCart } from "../slices/cartSlice";
 
 const ItemsList = ({ items }) => {
+  //Dispatching action
+  const dispatch = useDispatch();
+  const handleAddItem = (item) => {
+    dispatch(addItemsToCart(item));
+  };
+
   return (
     <div>
       {items.map((item) => (
@@ -26,7 +34,10 @@ const ItemsList = ({ items }) => {
           </div>
           <div className="w-3/12 p-4">
             <div className="absolute">
-              <button className=" p-2 px-5 mx-5 my-20  rounded-lg font-bold bg-white text-green-600 shadow-lg">
+              <button
+                className=" p-2 px-5 mx-5 my-20  rounded-lg font-bold bg-white text-green-600 shadow-lg cursor-pointer"
+                onClick={() => handleAddItem(item.card.info)}
+              >
                 ADD
               </button>
             </div>
