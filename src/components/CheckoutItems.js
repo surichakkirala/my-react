@@ -14,35 +14,35 @@ const CheckoutItems = ({ itemInfo }) => {
     <div className="p-4 border-gray-300 border-b-1 border-t-1 text-left flex justify-between">
       <div className="w-9/12 h-40">
         <div className="py-2">
-          <span className="font-bold">{itemInfo.item.name}</span>
+          <span className="font-bold">{itemInfo?.item?.name}</span>
         </div>
         <div className="py-2">
           <span className="text-lg">
             ₹
-            {itemInfo.item.price
-              ? itemInfo.item.price / 100
-              : itemInfo.item.defaultPrice / 100}
+            {itemInfo?.item?.price
+              ? itemInfo?.item?.price / 100
+              : itemInfo?.item?.defaultPrice / 100}
           </span>
         </div>
       </div>
       <div className="w-3/12 p-4">
         <img
-          src={CDN_URL + itemInfo.item.imageId}
+          src={CDN_URL + itemInfo?.item.imageId}
           className="w-full h-24 rounded-lg"
         />
         <div className="w-10/12 p-2 px-5 mx-3 my-1 bg-white rounded-lg flex items-center justify-between">
           <button
             className="rounded-lg font-bold text-green-600  cursor-pointer"
-            onClick={() => handleRemoveItem(itemInfo.item)}
+            onClick={() => handleRemoveItem(itemInfo?.item)}
           >
             -
           </button>
           <span className=" mx-2 font-bold text-green-600">
-            {itemInfo.quantity}
+            {itemInfo?.quantity}
           </span>
           <button
             className="font-bold text-green-600 cursor-pointer"
-            onClick={() => handleAddItem(itemInfo.item)}
+            onClick={() => handleAddItem(itemInfo?.item)}
           >
             +
           </button>
