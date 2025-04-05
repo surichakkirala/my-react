@@ -58,3 +58,27 @@
 - Create our cartSlice
 - Dispatch(action)
 - Read the data using selector
+
+# Types of testing(what developer can do)
+
+- Unit Testing
+- Integration Testing
+- E2E(End to End) Testing
+
+# Setting up testing in our App
+
+- Install React Testing Library
+  - Supporting links: https://testing-library.com/
+- Install JEST
+  - Supporting links: https://jestjs.io/
+- Install Babel dependencies
+- Configure Babel
+- We need to override babel configuration which comes with parcel.Follow below steps
+  - Go to https://parceljs.org/
+  - Click on Get started and select Javascript from Languages
+  - Now on the right hand side select Babel from the provided options
+  - Go to Usage with other tools section
+  - Create .parcelrc file under root directory and copy the content from above mentioned section.
+- Writing Jest configuration - created by running npx jest --init
+- Install JSDOM library
+  - Supporting links - https://testing-library.com/docs/react-testing-library/setup#jest-28
