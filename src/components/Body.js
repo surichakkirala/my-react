@@ -31,7 +31,7 @@ const Body = () => {
           }}
         />
         <button
-          className="px-4 py-4 m-4 rounded-lg cursor-pointer hover:text-orange-600"
+          className="px-4 py-4 m-4 rounded-lg font-bold text-orange-700 cursor-pointer hover:text-orange-600"
           onClick={() => {
             const filteredSearch = listOfRestaurants.filter((res) =>
               res.info.name.toLowerCase().includes(searchText.toLowerCase())
@@ -42,7 +42,7 @@ const Body = () => {
           Search
         </button>
         <button
-          className="px-4 py-4 rounded-lg cursor-pointer hover:text-orange-600"
+          className="px-4 py-4 rounded-lg font-bold text-orange-700 cursor-pointer hover:text-orange-600"
           onClick={() => {
             const filteredList = listOfRestaurants.filter(
               (restaurant) => restaurant.info.avgRating > 4.5
