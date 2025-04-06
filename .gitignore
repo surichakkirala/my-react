@@ -1,4 +1,5 @@
 /node_modules
 /dist
+/coverage
 .parcel-cache
 notes.js

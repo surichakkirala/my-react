@@ -82,3 +82,7 @@
 - Writing Jest configuration - created by running npx jest --init
 - Install JSDOM library
   - Supporting links - https://testing-library.com/docs/react-testing-library/setup#jest-28
+- Install @babel/preset-react - to make JSX work in test cases
+- Include @babel/preset-react inside my babel configuration as below
+  - ["@babel/preset-react", { runtime: "automatic" }]
+- Install @testing-library/jest-dom (npm i -D @testing-library/jest-dom)
