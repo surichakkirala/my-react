@@ -86,3 +86,9 @@
 - Include @babel/preset-react inside my babel configuration as below
   - ["@babel/preset-react", { runtime: "automatic" }]
 - Install @testing-library/jest-dom (npm i -D @testing-library/jest-dom)
+- To fix issues while writing test cases for Header do below steps
+  - npm install jest-fixed-jsdom --sav-dev
+  - Then in ur jest.config.js file, add this config below likely replacing jsdom
+    module. exports ={
+    testEnvironment : 'jest-fixed-jsdom',
+    }

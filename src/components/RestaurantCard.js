@@ -11,7 +11,7 @@ const RestaurantCard = (props) => {
     costForTwo,
     sla,
     aggregatedDiscountInfoV3,
-  } = resData?.info;
+  } = resData;
   return (
     <div className="w-[300px] h-[300px] bg-white rounded-lg cursor-pointer overflow-hidden ">
       <img
