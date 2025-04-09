@@ -10,6 +10,7 @@ const Header = () => {
 
   //subscribing to the store using a Selector
   const totalItemsCount = useSelector((store) => store.cart.totalItemsCount);
+
   return (
     <div className="w-screen h-20 flex justify-between items-center shadow-2xl">
       <div>

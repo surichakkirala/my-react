@@ -14,14 +14,12 @@ const ItemsList = ({ items }) => {
   const handleRemoveItem = (item) => {
     dispatch(removeItemsFromCart(item));
   };
-  const newCart = useSelector((store) => store.cart.items);
-  const cartItems = Object.values(newCart);
-
+  const cartItems = useSelector((store) => store.cart.items);
   return (
     <div>
       {items.map((item) => {
         const cartItem = cartItems.find(
-          (cartItem) => cartItem.item.id === item.card.info.id
+          (cartItem) => cartItem.id === item.card.info.id
         );
         return (
           <div
@@ -48,7 +46,7 @@ const ItemsList = ({ items }) => {
                   <div className="w-10/12 p-2 my-20 px-5 mx-4 bg-white rounded-lg flex items-center justify-between">
                     <button
                       className="rounded-lg font-bold text-green-600  cursor-pointer"
-                      onClick={() => handleRemoveItem(cartItem.item)}
+                      onClick={() => handleRemoveItem(cartItem)}
                     >
                       -
                     </button>
@@ -57,7 +55,7 @@ const ItemsList = ({ items }) => {
                     </span>
                     <button
                       className="border-0 font-bold text-green-600 cursor-pointer"
-                      onClick={() => handleAddItem(cartItem.item)}
+                      onClick={() => handleAddItem(cartItem)}
                     >
                       +
                     </button>

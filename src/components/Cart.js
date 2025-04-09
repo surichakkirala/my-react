@@ -5,8 +5,7 @@ import EmptyCart from "./EmptyCart";
 
 const Cart = () => {
   const dispatch = useDispatch();
-  const cart = useSelector((store) => store.cart.items);
-  const cartItems = Object.values(cart);
+  const cartItems = useSelector((store) => store.cart.items);
   const handleClearCart = () => {
     dispatch(clearCart());
   };
@@ -25,7 +24,7 @@ const Cart = () => {
           </div>
           <div className="my-4">
             {cartItems.map((cartItem) => (
-              <CheckoutItems key={cartItem.item.id} itemInfo={cartItem} />
+              <CheckoutItems key={cartItem.id} itemInfo={cartItem} />
             ))}
           </div>
         </div>

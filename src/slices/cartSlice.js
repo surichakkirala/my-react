@@ -4,8 +4,8 @@ import { act } from "react";
 const cartSlice = createSlice({
   name: "cart",
   initialState: {
-    totalItemsCount: 0,
-    items: {},
+    totalItemsCount: 0, // needed when using object
+    items: [],
   },
   reducers: {
     addItemsToCart: (state, action) => {
@@ -15,27 +15,53 @@ const cartSlice = createSlice({
       //   return newState;
       //mutating the state here in Redux Toolkit
       // need to rework by taking arrays --  // state.items.push(action.payload);
-      const { itemId } = action.payload;
       state.totalItemsCount += 1;
-      state.items[itemId]
-        ? (state.items[itemId].quantity += 1)
-        : (state.items[itemId] = { item: action.payload, quantity: 1 });
+      const itemExist = state.items.find(
+        (item) => item.id === action.payload.id
+      );
+      if (itemExist) {
+        itemExist.quantity += 1;
+      } else {
+        state.items.push({ ...action.payload, quantity: 1 });
+      }
+      //(OR)
+      // const { itemId } = action.payload;
+      // state.items[itemId]
+      // ? (state.items[itemId].quantity += 1)
+      //   : (state.items[itemId] = { item: action.payload, quantity: 1 });
     },
 
     removeItemsFromCart: (state, action) => {
-      //need to update logic -- state.items.pop();
-      const { itemId } = action.payload;
-      state.totalItemsCount ? state.totalItemsCount - 1 : 0;
-      if (state.items[itemId].quantity) {
-        const item = state.items[itemId];
-        item.quantity -= 1;
+      //Using splice
+      const indexOfExistingItem = state.items.findIndex(
+        (item) => item.id === action.payload.id
+      );
+      if (state.totalItemsCount) {
+        state.totalItemsCount -= 1;
       } else {
-        delete state.items[itemId];
+        state.totalItemsCount = 0;
       }
+      if (indexOfExistingItem !== -1) {
+        if (state.items[indexOfExistingItem].quantity > 1) {
+          state.items[indexOfExistingItem].quantity -= 1;
+        } else {
+          state.items.splice(indexOfExistingItem, 1);
+        }
+      }
+
+      //Using Object
+      // const { itemId } = action.payload;
+      // state.totalItemsCount ? state.totalItemsCount - 1 : 0;
+      // if (state.items[itemId].quantity) {
+      //   const item = state.items[itemId];
+      //   item.quantity -= 1;
+      // } else {
+      //   delete state.items[itemId];
+      // }
     },
     clearCart: (state) => {
-      state.items = {};
-      state.totalItemsCount = 0;
+      state.items.length = [];
+      state.totalItemsCount = 0; // needed when using object approach
     },
   },
 });
