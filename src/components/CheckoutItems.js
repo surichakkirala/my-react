@@ -11,42 +11,39 @@ const CheckoutItems = ({ itemInfo }) => {
     dispatch(removeItemsFromCart(item));
   };
   return (
-    <div className="p-4 border-gray-300 border-b-1 border-t-1 text-left flex justify-between">
-      <div className="w-9/12 h-40">
-        <div className="py-2">
-          <span className="font-bold">{itemInfo?.name}</span>
-        </div>
-        <div className="py-2">
-          <span className="text-lg">
-            ₹
-            {itemInfo?.price
-              ? itemInfo?.price / 100
-              : itemInfo?.defaultPrice / 100}
-          </span>
-        </div>
-      </div>
-      <div className="w-3/12 p-4">
+    <div className="flex flex-row items-start md:items-center p-4 border-b-1 border-gray-300 last:border-b-0">
+      <div>
         <img
           src={CDN_URL + itemInfo?.imageId}
-          className="w-full h-24 rounded-lg"
+          alt={itemInfo?.name}
+          className="rounded-lg w-30 h-30 md:w-20 md:h-10"
         />
-        <div className="w-10/12 p-2 px-5 mx-3 my-1 bg-white rounded-lg flex items-center justify-between">
-          <button
-            className="rounded-lg font-bold text-green-600  cursor-pointer"
-            onClick={() => handleRemoveItem(itemInfo)}
-          >
-            -
-          </button>
-          <span className=" mx-2 font-bold text-green-600">
-            {itemInfo?.quantity}
-          </span>
-          <button
-            className="font-bold text-green-600 cursor-pointer"
-            onClick={() => handleAddItem(itemInfo)}
-          >
-            +
-          </button>
-        </div>
+      </div>
+      <div className="ml-4 flex w-full flex-col ">
+        <h2 className="font-bold">{itemInfo?.name}</h2>
+        <span className="text-lg">
+          ₹
+          {itemInfo?.price
+            ? itemInfo?.price / 100
+            : itemInfo?.defaultPrice / 100}
+        </span>
+      </div>
+      <div className="bg-white rounded-lg flex items-center justify-between">
+        <button
+          className="rounded-lg font-bold text-green-600 px-2 py-2 cursor-pointer"
+          onClick={() => handleRemoveItem(itemInfo)}
+        >
+          -
+        </button>
+        <span className=" mx-2 font-bold text-green-600">
+          {itemInfo?.quantity}
+        </span>
+        <button
+          className="font-bold text-green-600 cursor-pointer px-2 py-2"
+          onClick={() => handleAddItem(itemInfo)}
+        >
+          +
+        </button>
       </div>
     </div>
   );
