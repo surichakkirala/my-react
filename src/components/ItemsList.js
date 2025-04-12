@@ -16,7 +16,7 @@ const ItemsList = ({ items }) => {
   };
   const cartItems = useSelector((store) => store.cart.items);
   return (
-    <div>
+    <div data-testid="foodItems">
       {items.map((item) => {
         const cartItem = cartItems.find(
           (cartItem) => cartItem.id === item.card.info.id

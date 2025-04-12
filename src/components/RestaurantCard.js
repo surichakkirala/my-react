@@ -13,7 +13,10 @@ const RestaurantCard = (props) => {
     aggregatedDiscountInfoV3,
   } = resData;
   return (
-    <div className="w-[300px] h-[300px] bg-white rounded-lg cursor-pointer overflow-hidden ">
+    <div
+      data-testid="resCard"
+      className="w-[300px] h-[300px] bg-white rounded-lg cursor-pointer overflow-hidden "
+    >
       <img
         className="w-full h-[64%] rounded-lg object-cover"
         alt="res-logo"

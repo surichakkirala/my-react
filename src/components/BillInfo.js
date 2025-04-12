@@ -1,6 +1,4 @@
 const BillInfo = ({ items }) => {
-  console.log(items);
-
   const totalItemPrice = items.reduce((total, item) => {
     return (
       total + item.quantity * (item.price / 100 || item.defaultPrice / 100)

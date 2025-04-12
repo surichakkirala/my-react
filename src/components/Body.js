@@ -23,6 +23,7 @@ const Body = () => {
       <div className="flex items-center justify-center">
         <input
           type="text"
+          data-testid="searchInput"
           className="w-auto h-10 border border-solid rounded-lg px-1"
           placeholder="Search..."
           value={searchText}
