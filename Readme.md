@@ -14,7 +14,6 @@
   - RestaurantCard
 
 - Footer
-
   - Copyright
   - Links
   - Address & Contact
@@ -53,6 +52,8 @@
 # Redux Toolkit
 
 - Install @reduxjs/toolkit and react-redux
+  - `npm i -D @reduxjs/toolkit`
+  - `npm i react-redux`
 - Build our store
 - Connect our store to our app
 - Create our cartSlice
