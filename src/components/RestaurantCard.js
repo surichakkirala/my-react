@@ -22,9 +22,6 @@ const RestaurantCard = (props) => {
         alt="res-logo"
         src={CDN_URL + cloudinaryImageId}
       />
-      {/* <div className=" relative font-extrabold text-inherit">
-        {aggregatedDiscountInfoV3.header + aggregatedDiscountInfoV3.subHeader}
-      </div> */}
       <div className="h-[fit-content] px-[10px]  m-0 ">
         <h3 className="font-bold">
           {name.length > 25 ? name.slice(0, 23) + "..." : name.slice(0, 25)}
